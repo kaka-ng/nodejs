@@ -50,7 +50,7 @@ export function encrypt (
   const key: Buffer = scryptSync(secret, salt, computeKeySize(algorithm))
   const ivSize = computeIVSize(algorithm)
   const iv: Buffer = Buffer.alloc(ivSize, randomBytes(ivSize), 'binary')
-  const option: any = [algorithm, key, iv, { authTagLength }]
+  const option: Parameters<typeof createCipheriv> = [algorithm, key, iv, { authTagLength } as any]
   const cipher: CipherGCM = createCipheriv.apply(createCipheriv, option) as CipherGCM
   cipher.setAAD(Buffer.from(`${String(secret)}${String(salt)}`))
 
@@ -75,7 +75,7 @@ export function decrypt (
   authTagLength = 16
 ): string {
   const key: Buffer = scryptSync(secret, salt, computeKeySize(algorithm))
-  const option: any = [algorithm, key, iv, { authTagLength }]
+  const option: Parameters<typeof createDecipheriv> = [algorithm, key, iv, { authTagLength } as any]
   const decipher = createDecipheriv.apply(createDecipheriv, option) as DecipherGCM
   decipher.setAAD(Buffer.from(`${String(secret)}${String(salt)}`))
   decipher.setAuthTag(authTag)
