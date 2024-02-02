@@ -5,7 +5,7 @@ export function isDate (value: unknown): value is Date {
 }
 
 export function isISO8601Date (value: unknown): value is string {
-  const regexp = /^^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*)?)(([-+](\d{2}):(\d{2})|[-+](\d{4})|Z)?)$$/
+  const regexp = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*)?)(([-+](\d{2}):(\d{2})|[-+](\d{4})|Z)?)$/
   return isString(value) && regexp.test(value)
 }
 
