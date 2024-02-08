@@ -4,7 +4,10 @@ import { type WorkerOptions } from 'node:worker_threads'
 
 export const TYPESCRIPT_WORKER = `
 const workerData = require('worker_threads').workerData
-require('ts-node').register(workerData.__tsNodeOptions)
+// we need to escape in unit test environment
+// prevent duplicate ts-node registration
+if(!process[Symbol.for('ts-node.register.instance')])
+  require('ts-node').register(workerData.__tsNodeOptions)
 require(workerData.__filename)
 `
 
