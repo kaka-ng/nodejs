@@ -11,6 +11,8 @@
   "scripts": {
     "unit": "pnpm -r --workspace-concurrency=1 unit",
     "test": "pnpm -r --workspace-concurrency=1 test",
-    "lint": "pnpm -r --workspace-concurrency=1 lint"
+    "lint": "pnpm -r --workspace-concurrency=1 lint",
+    "build": "pnpm -r --workspace-concurrency=1 build",
+    "clean": "pnpm -r --workspace-concurrency=1 clean"
   }
 }
