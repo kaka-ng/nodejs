@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { clone, removeEmptyProps, slugify } from '../lib'
+import { clone, createDeferredPromise, removeEmptyProps, slugify } from '../lib'
 
 test('removeEmptyProps', async function (t) {
   await t.test('{}', function (t) {
@@ -216,5 +216,34 @@ test('clone', async function (t) {
     const ref = new Set(['foo'])
     const o = clone(ref)
     assert.deepEqual(o, ref)
+  })
+})
+
+test('createDeferredPromise', async function (t) {
+  await t.test('resolve', async function (t) {
+    const promise = createDeferredPromise()
+    promise.resolve('ok')
+    const result = await promise.promise
+    assert.deepEqual(result, 'ok')
+  })
+
+  await t.test('reject', async function (t) {
+    const promise = createDeferredPromise()
+    promise.reject('ok')
+    try {
+      await promise.promise
+    } catch (err) {
+      assert.deepEqual(err, 'ok')
+    }
+  })
+
+  await t.test('chainable', async function (t) {
+    const promise = createDeferredPromise()
+    promise.resolve('ok')
+    const result = await promise.promise.then((o) => {
+      assert.deepEqual(o, 'ok')
+      return o
+    })
+    assert.deepEqual(result, 'ok')
   })
 })
