@@ -89,8 +89,8 @@ importers:
   packages/utils:
     dependencies:
       pinyin-pro:
-        specifier: ^3.19.6
-        version: 3.19.6
+        specifier: ^3.19.7
+        version: 3.19.7
     devDependencies:
       '@types/node':
         specifier: ^20.12.3
@@ -1904,8 +1904,8 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
-  /pinyin-pro@3.19.6:
-    resolution: {integrity: sha512-oWb34orr12+DjXf6gtGMB+gIpjRi7DZzyJE66ultbmNzVhpimM/utGtMI8GcbOy/lb26Ph/nogwNYriRPu+SGQ==}
+  /pinyin-pro@3.19.7:
+    resolution: {integrity: sha512-SydYnjrvUpvW6qRpuZPfutYAz+lgoMJDPAbKUy8fnXt3qQIg+Wdpcd07A/1ljj0mTG7YDoYjXcF/jHTBCPShYQ==}
     dev: false
 
   /plimit-lit@1.6.1:
