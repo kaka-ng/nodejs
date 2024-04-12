@@ -21,8 +21,9 @@ run({
   concurrency: true,
   timeout: Number(values.timeout ?? 30_000),
   setup: (test) => {
+    const hasReporter = typeof test.reporter !== 'undefined'
     const reportor = new Spec()
-    compose(test?.reporter, reportor).pipe(process.stdout)
+    compose(hasReporter ? test.reporter : test, reportor).pipe(process.stdout)
   },
   files: findFiles()
 }).on('test:fail', (data) => {
