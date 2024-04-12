@@ -22,7 +22,7 @@ run({
   timeout: Number(values.timeout ?? 30_000),
   setup: (test) => {
     const reportor = new Spec()
-    compose(test.reporter, reportor).pipe(process.stdout)
+    compose(test?.reporter, reportor).pipe(process.stdout)
   },
   files: findFiles()
 }).on('test:fail', (data) => {
