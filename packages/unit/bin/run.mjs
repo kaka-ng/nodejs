@@ -18,11 +18,11 @@ run({
   timeout: Number(values.timeout ?? 30_000),
   setup: (test) => {
     const reportor = new Spec()
-    compose(test.reporter, reportor).pipe(process.stdout)
+    compose(test?.reporter, reportor).pipe(process.stdout)
   },
   files: await glob(['**/*.test.{js,ts}'], { ignore: 'node_modules/**' })
 }).on('test:fail', (data) => {
   if (data.todo === undefined || data.todo === false) {
-    process.exitCode = 1;
+    process.exitCode = 1
   }
-});
+})
