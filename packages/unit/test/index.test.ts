@@ -39,6 +39,18 @@ test('sub path with callback', async (t) => {
   })
 })
 
+test('should wait for async task', (t) => {
+  t.plan(1)
+
+  t.test('equal', (t) => {
+    t.plan(1)
+
+    setImmediate(() => {
+      t.equal(true, true)
+    })
+  })
+})
+
 test('use assert inside test', (t) => {
   t.plan(1)
 

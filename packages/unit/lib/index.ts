@@ -70,8 +70,8 @@ interface DeferredPromise<T = unknown> {
   resolve: (...args: any[]) => void
   reject: (...args: any[]) => void
 }
-function createDeferredPromise (): DeferredPromise {
-  const promise: any = {}
+function createDeferredPromise (replace: any = {}): DeferredPromise {
+  const promise: any = replace
   promise.promise = new Promise((resolve, reject) => {
     promise.resolve = resolve
     promise.reject = reject
@@ -86,7 +86,11 @@ function wrapTest (testFn: any): Test {
     const fn: TestFn = args.pop() // TestFn must be the last one
 
     const customFn: ExtendedTestFn = async function (context) {
-      const { promises: contextPromises, teardown } = wrapContext(context)
+      const {
+        promises: contextPromises,
+        teardown,
+        completed
+      } = wrapContext(context)
 
       // either return promise or using done
       const promise = createDeferredPromise()
@@ -94,6 +98,7 @@ function wrapTest (testFn: any): Test {
         promise.resolve()
       })
 
+      await completed.promise
       // resolve sub context
       await Promise.all(contextPromises)
       // resolve current context
@@ -108,8 +113,13 @@ function wrapTest (testFn: any): Test {
   return test
 }
 
-function wrapContext (context: ExtendedTestContext): { promises: Array<Promise<unknown>>, teardown: () => void } {
+function wrapContext (context: ExtendedTestContext): {
+  promises: Array<Promise<unknown>>
+  teardown: () => void
+  completed: DeferredPromise
+} {
   const promises: Array<Promise<unknown>> = []
+  const completed: DeferredPromise = {} as any
   let expect = -1
   let actual = 0
 
@@ -119,8 +129,19 @@ function wrapContext (context: ExtendedTestContext): { promises: Array<Promise<u
     }
   }
 
+  const validate = (): void => {
+    if (expect > -1 && actual === expect) {
+      completed?.resolve()
+    }
+  }
+
   context.plan = function plan (num: number) {
     expect = num
+    if (num > -1) {
+      createDeferredPromise(completed)
+    } else {
+      completed?.resolve()
+    }
   }
 
   const contextTest = context.test.bind(context)
@@ -129,6 +150,7 @@ function wrapContext (context: ExtendedTestContext): { promises: Array<Promise<u
     promises.push(promise)
     await promise
     actual++
+    validate()
   }
   context.test = test
 
@@ -137,10 +159,11 @@ function wrapContext (context: ExtendedTestContext): { promises: Array<Promise<u
       (context as any)[method] = (...args: any[]) => {
         actual++
         const res = (assert as any)[method](...args)
+        validate()
         return res
       }
     }
   }
 
-  return { promises, teardown }
+  return { promises, teardown, completed }
 }
