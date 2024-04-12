@@ -1,5 +1,6 @@
-import { readdirSync } from 'node:fs'
-import { resolve } from 'node:path'
+#!/usr/bin/env node
+
+import { glob } from 'glob'
 import { compose } from 'node:stream'
 import { run } from 'node:test'
 import { spec as Spec } from 'node:test/reporters'
@@ -8,14 +9,9 @@ import { parseArgs } from 'node:util'
 const { values } = parseArgs({
   args: process.args,
   options: {
-    timeout: { type: 'string' },
+    timeout: { type: 'string' }
   }
 })
-
-function findFiles () {
-  const files = readdirSync(resolve('test'), { recursive: true })
-  return files.filter((file) => String(file).endsWith('.test.ts')).map((file) => resolve('test', String(file)))
-}
 
 run({
   concurrency: true,
@@ -25,9 +21,9 @@ run({
     const reportor = new Spec()
     compose(hasReporter ? test.reporter : test, reportor).pipe(process.stdout)
   },
-  files: findFiles()
+  files: await glob(['**/*.test.{js,ts}'], { ignore: 'node_modules/**' })
 }).on('test:fail', (data) => {
   if (data.todo === undefined || data.todo === false) {
-    process.exitCode = 1;
+    process.exitCode = 1
   }
-});
+})
