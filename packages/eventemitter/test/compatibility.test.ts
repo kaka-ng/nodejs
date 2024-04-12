@@ -9,7 +9,7 @@ test('node:events', async function (t) {
     process.nextTick(() => {
       ee.emit('once')
     })
-    await once(ee, 'once')
+    await once(ee as never as NodeJS.EventEmitter, 'once')
     assert.ok('checked')
   })
 
