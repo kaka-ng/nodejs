@@ -1,10 +1,9 @@
-import assert from 'node:assert/strict'
+import { test } from '@kakang/unit'
 import { once } from 'node:events'
 import { join } from 'node:path'
-import t from 'node:test'
 import { WorkerPool } from '../lib'
 
-t.test('events', async function (t) {
+test('events', async function (t) {
   const worker = new WorkerPool(join(__dirname, 'pingpong.worker.ts'), {
     minWorker: 1,
     maxWorker: 1
@@ -30,7 +29,7 @@ t.test('events', async function (t) {
   worker.on('worker:exit', inc('exit'))
 
   await once(worker, 'worker:online')
-  assert.equal(worker.workerCount, 1)
+  t.equal(worker.workerCount, 1)
 
   worker.postMessage('ping')
 
@@ -39,7 +38,7 @@ t.test('events', async function (t) {
 
   await once(worker, 'terminated')
 
-  assert.deepEqual(events, {
+  t.deepEqual(events, {
     online: 1,
     idle: 2, // 1: startup, 2: handle job
     busy: 1,

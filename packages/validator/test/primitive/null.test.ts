@@ -1,41 +1,40 @@
-import assert from 'node:assert/strict'
-import { test } from 'node:test'
+import { test } from '@kakang/unit'
 import { isIdentical, isNull } from '../../lib/primitive/null'
 
 test('Null', async function (t) {
-  await t.test('isNull', async function (t) {
-    await t.test('null', function (t) {
-      assert.equal(isNull(null), true)
+  t.test('isNull', async function (t) {
+    t.test('null', function (t) {
+      t.equal(isNull(null), true)
     })
 
-    await t.test('undefined', function (t) {
-      assert.equal(isNull(undefined), false)
+    t.test('undefined', function (t) {
+      t.equal(isNull(undefined), false)
     })
 
-    await t.test('0', function (t) {
-      assert.equal(isNull(0), false)
+    t.test('0', function (t) {
+      t.equal(isNull(0), false)
     })
 
-    await t.test('empty string', function (t) {
-      assert.equal(isNull(''), false)
+    t.test('empty string', function (t) {
+      t.equal(isNull(''), false)
     })
   })
 
-  await t.test('isIdentical', async function (t) {
-    await t.test('null | null', function (t) {
-      assert.equal(isIdentical(null, null), true)
+  t.test('isIdentical', async function (t) {
+    t.test('null | null', function (t) {
+      t.equal(isIdentical(null, null), true)
     })
 
-    await t.test('undefined | null', function (t) {
-      assert.equal(isIdentical(undefined, null), false)
+    t.test('undefined | null', function (t) {
+      t.equal(isIdentical(undefined, null), false)
     })
 
-    await t.test('0 | null', function (t) {
-      assert.equal(isIdentical(0, null), false)
+    t.test('0 | null', function (t) {
+      t.equal(isIdentical(0, null), false)
     })
 
-    await t.test('empty string | null', function (t) {
-      assert.equal(isIdentical('', null), false)
+    t.test('empty string | null', function (t) {
+      t.equal(isIdentical('', null), false)
     })
   })
 })
