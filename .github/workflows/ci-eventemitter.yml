@@ -94,5 +94,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Build @kakang/unit
+        run: pnpm --filter "./packages/unit" run build
+
       - name: Run tests
         run: pnpm --filter "./packages/eventemitter" run test

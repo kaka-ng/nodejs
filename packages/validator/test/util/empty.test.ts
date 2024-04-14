@@ -1,73 +1,72 @@
-import assert from 'node:assert/strict'
-import { test } from 'node:test'
+import { test } from '@kakang/unit'
 import { isEmpty, isExist } from '../../lib/util/empty'
 
 test('Empty', async function (t) {
-  await t.test('isEmpty', async function (t) {
-    await t.test('""', function (t) {
-      assert.equal(isEmpty(''), true)
+  t.test('isEmpty', async function (t) {
+    t.test('""', function (t) {
+      t.equal(isEmpty(''), true)
     })
 
-    await t.test('{}', function (t) {
-      assert.equal(isEmpty({}), true)
+    t.test('{}', function (t) {
+      t.equal(isEmpty({}), true)
     })
 
-    await t.test('[]', function (t) {
-      assert.equal(isEmpty([]), true)
+    t.test('[]', function (t) {
+      t.equal(isEmpty([]), true)
     })
 
-    await t.test('undefined', function (t) {
-      assert.equal(isEmpty(undefined), true)
+    t.test('undefined', function (t) {
+      t.equal(isEmpty(undefined), true)
     })
 
-    await t.test('null', function (t) {
-      assert.equal(isEmpty(null), true)
+    t.test('null', function (t) {
+      t.equal(isEmpty(null), true)
     })
 
-    await t.test('"123"', function (t) {
-      assert.equal(isEmpty('123'), false)
+    t.test('"123"', function (t) {
+      t.equal(isEmpty('123'), false)
     })
 
-    await t.test('{foo:"bar"}', function (t) {
-      assert.equal(isEmpty({ foo: 'bar' }), false)
+    t.test('{foo:"bar"}', function (t) {
+      t.equal(isEmpty({ foo: 'bar' }), false)
     })
 
-    await t.test('[1,2,3]', function (t) {
-      assert.equal(isEmpty([1, 2, 3]), false)
+    t.test('[1,2,3]', function (t) {
+      t.equal(isEmpty([1, 2, 3]), false)
     })
   })
 
-  await t.test('isExist', async function (t) {
-    await t.test('""', function (t) {
-      assert.equal(isExist(''), false)
+  t.test('isExist', async function (t) {
+    t.test('""', function (t) {
+      t.equal(isExist(''), false)
     })
 
-    await t.test('{}', function (t) {
-      assert.equal(isExist({}), false)
+    t.test('{}', function (t) {
+      t.equal(isExist({}), false)
     })
 
-    await t.test('[]', function (t) {
-      assert.equal(isExist([]), false)
+    t.test('[]', function (t) {
+      t.equal(isExist([]), false)
     })
 
-    await t.test('undefined', function (t) {
-      assert.equal(isExist(undefined), false)
+    t.test('undefined', function (t) {
+      t.equal(isExist(undefined), false)
     })
 
-    await t.test('null', function (t) {
-      assert.equal(isExist(null), false)
+    t.test('null', function (t) {
+      t.equal(isExist(null), false)
     })
 
-    await t.test('"123"', function (t) {
-      assert.equal(isExist('123'), true)
+    t.test('"123"', function (t) {
+      t.equal(isExist('123'), true)
     })
 
-    await t.test('{foo:"bar"}', function (t) {
-      assert.equal(isExist({ foo: 'bar' }), true)
+    t.test('{foo:"bar"}', function (t) {
+      t.equal(isExist({ foo: 'bar' }), true)
     })
 
-    await t.test('[1,2,3]', function (t) {
-      assert.equal(isExist([1, 2, 3]), true)
+    t.test('[1,2,3]', function (t) {
+      t.equal(isExist([1, 2, 3]), true)
     })
   })
 })
