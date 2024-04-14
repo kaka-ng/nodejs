@@ -60,7 +60,7 @@ interface Test {
 
 interface Assert extends Omit<typeof assert, 'CallTracker' | 'AssertionError' | 'strict'> {}
 
-interface ExtendedTestContext extends Omit<TestContext, 'test'>, Assert {
+export interface ExtendedTestContext extends Omit<TestContext, 'test'>, Assert {
   plan: (count: number) => void
   test: Test
 }

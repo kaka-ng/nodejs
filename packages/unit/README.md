@@ -26,3 +26,34 @@ test('test', (t) => {
   })
 })
 ```
+
+### CLI
+
+This package provide a handy function to collect test
+file and run it.
+
+```shell
+# JavaScript
+unit
+# TypeScript
+NODE_OPTIONS="--require ts-node/register" unit
+```
+
+### TypeScript
+
+Due to the limitation on TypeScript about `asserts`,
+you need to explicitly type the context before using
+some of the API.
+
+```ts
+import { test, type ExtendedTestContext } from '@kakang/unit'
+
+test('context', (t: ExtendedTestContext) => {
+  t.ok('pass') // without explicit typing the `t`, it would fail
+})
+
+test('function', (t) => {
+  const ok: typeof t.ok = t.ok
+  ok('pass') // without explicit typing the `ok`, it would fail
+})
+```
