@@ -154,6 +154,8 @@ function wrapContext (context: ExtendedTestContext): {
   }
   context.test = test
 
+  // Matteo Collina. MIT License.
+  // Reference https://github.com/mcollina/tspl/blob/e8e854d423dd5eda80d136c4ce2ee44612a9e132/tspl.js#L48-L61
   for (const method of Object.keys(assert)) {
     if (method.match(/^[a-z]/) !== null) {
       (context as any)[method] = (...args: any[]) => {
