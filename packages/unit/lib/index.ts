@@ -99,10 +99,10 @@ function wrapTest (testFn: any): Test {
       })
 
       await completed.promise
-      // resolve sub context
-      await Promise.all(contextPromises)
       // resolve current context
       await Promise.race([promise.promise, fnPromise])
+      // resolve sub context
+      await Promise.all(contextPromises)
 
       teardown()
     }
