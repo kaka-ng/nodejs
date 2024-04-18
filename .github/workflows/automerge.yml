@@ -48,9 +48,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build @kakang/unit
-        run: pnpm --filter "./packages/unit" run build
-
       - name: Lint code
         run: pnpm run lint
 
@@ -98,6 +95,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+
+      - name: Build @kakang/unit
+        run: pnpm --filter "./packages/unit" run build
 
       - name: Run tests
         run: pnpm run test
