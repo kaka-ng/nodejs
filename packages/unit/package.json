@@ -55,6 +55,6 @@
     "typescript": "~5.4.5"
   },
   "dependencies": {
-    "glob": "^10.3.12"
+    "glob": "^10.3.14"
   }
 }
