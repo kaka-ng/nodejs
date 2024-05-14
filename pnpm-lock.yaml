@@ -50,8 +50,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@20.12.12)(typescript@5.4.5)
       tsc-alias:
-        specifier: ^1.8.9
-        version: 1.8.9
+        specifier: ^1.8.10
+        version: 1.8.10
       typescript:
         specifier: ~5.4.5
         version: 5.4.5
@@ -98,8 +98,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@20.12.12)(typescript@5.4.5)
       tsc-alias:
-        specifier: ^1.8.9
-        version: 1.8.9
+        specifier: ^1.8.10
+        version: 1.8.10
       typescript:
         specifier: ~5.4.5
         version: 5.4.5
@@ -150,8 +150,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@20.12.12)(typescript@5.4.5)
       tsc-alias:
-        specifier: ^1.8.9
-        version: 1.8.9
+        specifier: ^1.8.10
+        version: 1.8.10
       typescript:
         specifier: ~5.4.5
         version: 5.4.5
@@ -202,8 +202,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@20.12.12)(typescript@5.4.5)
       tsc-alias:
-        specifier: ^1.8.9
-        version: 1.8.9
+        specifier: ^1.8.10
+        version: 1.8.10
       typescript:
         specifier: ~5.4.5
         version: 5.4.5
@@ -250,8 +250,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@20.12.12)(typescript@5.4.5)
       tsc-alias:
-        specifier: ^1.8.9
-        version: 1.8.9
+        specifier: ^1.8.10
+        version: 1.8.10
       typescript:
         specifier: ~5.4.5
         version: 5.4.5
@@ -298,8 +298,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@20.12.12)(typescript@5.4.5)
       tsc-alias:
-        specifier: ^1.8.9
-        version: 1.8.9
+        specifier: ^1.8.10
+        version: 1.8.10
       typescript:
         specifier: ~5.4.5
         version: 5.4.5
@@ -2663,8 +2663,8 @@ packages:
       yn: 3.1.1
     dev: true
 
-  /tsc-alias@1.8.9:
-    resolution: {integrity: sha512-Bkxu+LlUp/VG2qkcXGmj9wBkJuJID0mEC9t+bZaEbl9kyk/QJX6uo8/+z8DxTqUoqKPcbSApO2Ep42bsIVm9DA==}
+  /tsc-alias@1.8.10:
+    resolution: {integrity: sha512-Ibv4KAWfFkFdKJxnWfVtdOmB0Zi1RJVxcbPGiCDsFpCQSsmpWyuzHG3rQyI5YkobWwxFPEyQfu1hdo4qLG2zPw==}
     hasBin: true
     dependencies:
       chokidar: 3.6.0
