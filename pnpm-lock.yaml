@@ -159,8 +159,8 @@ importers:
   packages/utils:
     dependencies:
       pinyin-pro:
-        specifier: ^3.21.0
-        version: 3.21.0
+        specifier: ^3.21.1
+        version: 3.21.1
     devDependencies:
       '@kakang/unit':
         specifier: workspace:^
@@ -2243,8 +2243,8 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
-  /pinyin-pro@3.21.0:
-    resolution: {integrity: sha512-3vhDqWbfjLcJAdLQGECtu8nsKI3bJva1AuqaG+c7Lgvs93Dvuqg8OhvanarrQ7QDGcg/k+aLnoSIf3VWIyjiUw==}
+  /pinyin-pro@3.21.1:
+    resolution: {integrity: sha512-7Dhveh/6q5rA53a4gJWM5U19Ygkvz/pOoUdw7chE5bD+7cRCvpguRhxyO2WX6UWAFj80n2wHuyoZMh1V25VTbQ==}
     dev: false
 
   /plimit-lit@1.6.1:
