@@ -23,8 +23,8 @@ importers:
         specifier: 7.13.0
         version: 7.13.0(eslint@8.57.0)(typescript@5.4.5)
       c8:
-        specifier: ^10.0.0
-        version: 10.0.0
+        specifier: ^10.1.1
+        version: 10.1.1
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -71,8 +71,8 @@ importers:
         specifier: 7.13.0
         version: 7.13.0(eslint@8.57.0)(typescript@5.4.5)
       c8:
-        specifier: ^10.0.0
-        version: 10.0.0
+        specifier: ^10.1.1
+        version: 10.1.1
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -123,8 +123,8 @@ importers:
         specifier: 7.13.0
         version: 7.13.0(eslint@8.57.0)(typescript@5.4.5)
       c8:
-        specifier: ^10.0.0
-        version: 10.0.0
+        specifier: ^10.1.1
+        version: 10.1.1
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -175,8 +175,8 @@ importers:
         specifier: 7.13.0
         version: 7.13.0(eslint@8.57.0)(typescript@5.4.5)
       c8:
-        specifier: ^10.0.0
-        version: 10.0.0
+        specifier: ^10.1.1
+        version: 10.1.1
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -223,8 +223,8 @@ importers:
         specifier: 7.13.0
         version: 7.13.0(eslint@8.57.0)(typescript@5.4.5)
       c8:
-        specifier: ^10.0.0
-        version: 10.0.0
+        specifier: ^10.1.1
+        version: 10.1.1
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -271,8 +271,8 @@ importers:
         specifier: 7.13.0
         version: 7.13.0(eslint@8.57.0)(typescript@5.4.5)
       c8:
-        specifier: ^10.0.0
-        version: 10.0.0
+        specifier: ^10.1.1
+        version: 10.1.1
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -798,8 +798,8 @@ packages:
       fill-range: 7.0.1
     dev: true
 
-  /c8@10.0.0:
-    resolution: {integrity: sha512-rdQecjxw16P8kwgMBjruaQyfF+R2o/mucCCK4VPktwq2HFMWLOHGyUasb46+WlUOVJX94d6dZolcJxzjCzWmXg==}
+  /c8@10.1.1:
+    resolution: {integrity: sha512-+aAvpNMwnzncW27XsEf2eMrGTF8HXIGZ24UQ1dW679+8SQ/UvDXxHNoKwMohcI9ZVj0xl/bI4/meqxvIWOBYaw==}
     engines: {node: '>=18'}
     hasBin: true
     dependencies:
