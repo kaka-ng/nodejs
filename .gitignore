@@ -120,6 +120,7 @@ dist
 *.js.map
 *.js
 *.d.ts
+!eslint.config.js
 
 #
 yarn.lock
