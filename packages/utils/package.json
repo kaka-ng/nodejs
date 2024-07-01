@@ -51,6 +51,6 @@
   },
   "dependencies": {
     "eslint-config-love": "^53.0.0",
-    "pinyin-pro": "^3.22.2"
+    "pinyin-pro": "^3.23.0"
   }
 }
