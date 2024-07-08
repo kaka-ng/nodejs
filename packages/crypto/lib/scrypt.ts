@@ -20,13 +20,18 @@ export async function compare (value: string, hashed: string): Promise<boolean> 
   if (array === null) throw new Error('Invalid Scrypt Hash Format.')
   const [,keylen, cost, blockSize, parallelization, salt, hash] = array
   const maxmem = 128 * Math.pow(2, Number(cost)) * Number(blockSize) * 2
-  return await new Promise(function (resolve, reject) {
+  return await new Promise(function (resolve) {
     scrypt(value, Buffer.from(salt, 'base64url'), Number(keylen), {
       cost: Math.pow(2, Number(cost)), blockSize: Number(blockSize), parallelization: Number(parallelization), maxmem
     }, function (error, key) {
+      const value = Buffer.from(hash, 'base64url')
       /* istanbul ignore next */
-      if (error !== null) reject(error)
-      resolve(timingSafeEqual(key, Buffer.from(hash, 'base64url')))
+      if (error !== null) {
+        timingSafeEqual(value, value)
+        resolve(false)
+      } else {
+        resolve(timingSafeEqual(key, value))
+      }
     })
   })
 }
