@@ -52,6 +52,6 @@
   },
   "dependencies": {
     "eslint-config-love": "^53.0.0",
-    "glob": "^10.4.2"
+    "glob": "^10.4.3"
   }
 }
