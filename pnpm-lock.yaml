@@ -114,8 +114,8 @@ importers:
   packages/utils:
     dependencies:
       pinyin-pro:
-        specifier: ^3.23.0
-        version: 3.23.0
+        specifier: ^3.23.1
+        version: 3.23.1
     devDependencies:
       '@kakang/unit':
         specifier: workspace:^
@@ -1174,8 +1174,8 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
 
-  pinyin-pro@3.23.0:
-    resolution: {integrity: sha512-YDwKw31PPxsr1RQzDMmHuv4Z3exaTHrVQNdVgolyhoIrsRuM3QhsoAtzYPXIaVxb5MyWCSIiEbkwvXMfy1imNA==}
+  pinyin-pro@3.23.1:
+    resolution: {integrity: sha512-fA345e5Zj+oAemjPKN9BpbTToUrq3J6ZVKEXpiCNNftFQahr4cKsBNnpGWR154WSOP3PgqlsaNgKklD8FlZvSw==}
 
   plimit-lit@1.6.1:
     resolution: {integrity: sha512-B7+VDyb8Tl6oMJT9oSO2CW8XC/T4UcJGrwOVoNGwOQsQYhlpfajmrMj5xeejqaASq3V/EqThyOeATEOMuSEXiA==}
@@ -2577,7 +2577,7 @@ snapshots:
 
   picomatch@2.3.1: {}
 
-  pinyin-pro@3.23.0: {}
+  pinyin-pro@3.23.1: {}
 
   plimit-lit@1.6.1:
     dependencies:
