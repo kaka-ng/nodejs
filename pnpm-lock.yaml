@@ -26,8 +26,8 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       eslint-config-love:
-        specifier: ^54.0.0
-        version: 54.0.0(@typescript-eslint/parser@7.16.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3)
+        specifier: ^56.0.0
+        version: 56.0.0(@typescript-eslint/parser@7.16.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -59,8 +59,8 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       eslint-config-love:
-        specifier: ^54.0.0
-        version: 54.0.0(@typescript-eslint/parser@7.16.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3)
+        specifier: ^56.0.0
+        version: 56.0.0(@typescript-eslint/parser@7.16.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -96,8 +96,8 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       eslint-config-love:
-        specifier: ^54.0.0
-        version: 54.0.0(@typescript-eslint/parser@7.16.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3)
+        specifier: ^56.0.0
+        version: 56.0.0(@typescript-eslint/parser@7.16.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -133,8 +133,8 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       eslint-config-love:
-        specifier: ^54.0.0
-        version: 54.0.0(@typescript-eslint/parser@7.16.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3)
+        specifier: ^56.0.0
+        version: 56.0.0(@typescript-eslint/parser@7.16.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -166,8 +166,8 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       eslint-config-love:
-        specifier: ^54.0.0
-        version: 54.0.0(@typescript-eslint/parser@7.16.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3)
+        specifier: ^56.0.0
+        version: 56.0.0(@typescript-eslint/parser@7.16.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -199,8 +199,8 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       eslint-config-love:
-        specifier: ^54.0.0
-        version: 54.0.0(@typescript-eslint/parser@7.16.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3)
+        specifier: ^56.0.0
+        version: 56.0.0(@typescript-eslint/parser@7.16.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -638,8 +638,8 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
-  eslint-config-love@54.0.0:
-    resolution: {integrity: sha512-8qtibQSOuqPQprof3toeBGUND+M0iD4aJcjP7RiAtJq0vMbhIMsKJczJUjAICH+UbLclGz7WtWDRDoYKkkDCIg==}
+  eslint-config-love@56.0.0:
+    resolution: {integrity: sha512-vcr6yRq1LsobHNFs9AmY/YBPej2Q7CVfcjLLvvZTSmO7OlDtUHYiRUACSgYGhsCdNf7YwiUhPQZOYLKe3JDJaA==}
     peerDependencies:
       eslint: ^8.0.1
       typescript: '*'
@@ -1575,7 +1575,7 @@ snapshots:
 
   '@typescript-eslint/eslint-plugin@7.16.0(@typescript-eslint/parser@7.16.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3)':
     dependencies:
-      '@eslint-community/regexpp': 4.10.1
+      '@eslint-community/regexpp': 4.11.0
       '@typescript-eslint/parser': 7.16.0(eslint@8.57.0)(typescript@5.5.3)
       '@typescript-eslint/scope-manager': 7.16.0
       '@typescript-eslint/type-utils': 7.16.0(eslint@8.57.0)(typescript@5.5.3)
@@ -1983,7 +1983,7 @@ snapshots:
       eslint: 8.57.0
       semver: 7.6.2
 
-  eslint-config-love@54.0.0(@typescript-eslint/parser@7.16.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3):
+  eslint-config-love@56.0.0(@typescript-eslint/parser@7.16.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3):
     dependencies:
       eslint: 8.57.0
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.16.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)
