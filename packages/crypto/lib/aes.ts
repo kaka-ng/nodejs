@@ -61,7 +61,7 @@ export function encrypt (
     iv: iv.toString('hex'),
     authTag: cipher.getAuthTag().toString('hex'),
     secret,
-    salt
+    salt,
   }
 }
 

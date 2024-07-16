@@ -1,6 +1,6 @@
 import assert from 'node:assert'
 import {
-  test as nodeTest
+  test as nodeTest,
 } from 'node:test'
 
 type TestFn = NonNullable<Parameters<typeof nodeTest>[0]>
@@ -89,7 +89,7 @@ function wrapTest (testFn: any): Test {
       const {
         promises: contextPromises,
         teardown,
-        completed
+        completed,
       } = wrapContext(context)
 
       // either return promise or using done

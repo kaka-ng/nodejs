@@ -17,7 +17,7 @@ function wrapOnce (ee: EventEmitter, listener: Listener): Listener {
   const execute = async (...args: any[]): Promise<void> => {
     if (executed) return
     executed = true
-    // eslint-disable-next-line @typescript-eslint/await-thenable, @typescript-eslint/no-confusing-void-expression
+
     await listener.apply(ee, args)
   }
   execute.listener = listener
@@ -72,7 +72,7 @@ export class EventEmitter {
         // we resolve as the same time with same value
         promise.resolve({
           done: false,
-          value: stack.shift()
+          value: stack.shift(),
         })
         promise = null
       }
@@ -87,16 +87,16 @@ export class EventEmitter {
         } else {
           return {
             done: false,
-            value: stack.shift()
+            value: stack.shift(),
           }
         }
-      }
+      },
     }
 
     return {
       [Symbol.asyncIterator] () {
         return iterator
-      }
+      },
     }
   }
 
@@ -107,7 +107,6 @@ export class EventEmitter {
   async emit (eventName: EventName, ...args: any[]): Promise<boolean> {
     const stack = this.#findEventStack(eventName)
     for (const listener of stack) {
-      // eslint-disable-next-line @typescript-eslint/await-thenable, @typescript-eslint/no-confusing-void-expression
       await listener.apply(this, args)
     }
     return true
@@ -125,7 +124,6 @@ export class EventEmitter {
     return this.#findEventStack(eventName).length
   }
 
-  // eslint-disable-next-line @typescript-eslint/ban-types
   listeners (eventName: EventName): Function[] {
     const stack = this.#findEventStack(eventName)
     return stack.filter((l: any) => typeof l.listener === 'undefined')
@@ -187,7 +185,6 @@ export class EventEmitter {
     return this
   }
 
-  // eslint-disable-next-line @typescript-eslint/ban-types
   rawListeners (eventName: EventName): Function[] {
     return this.#findEventStack(eventName)
   }

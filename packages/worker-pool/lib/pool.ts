@@ -86,7 +86,7 @@ export class WorkerPool extends EventEmitter {
       messageId: randomUUID(),
       action,
       value,
-      transferList: transferList ?? []
+      transferList: transferList ?? [],
     })
   }
 

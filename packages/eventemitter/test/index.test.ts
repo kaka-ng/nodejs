@@ -135,7 +135,7 @@ test('EventEmitter', async function (t) {
     const ee = new EventEmitter()
     const events = [
       crypto.randomBytes(4).toString('hex'),
-      crypto.randomBytes(4).toString('hex')
+      crypto.randomBytes(4).toString('hex'),
     ]
     ee.addListener(events[0], tick)
     ee.addListener(events[1], tick)

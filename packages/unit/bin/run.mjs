@@ -9,8 +9,8 @@ import { parseArgs } from 'node:util'
 const { values } = parseArgs({
   args: process.args,
   options: {
-    timeout: { type: 'string' }
-  }
+    timeout: { type: 'string' },
+  },
 })
 
 run({
@@ -21,7 +21,7 @@ run({
     const reportor = new Spec()
     compose(hasReporter ? test.reporter : test, reportor).pipe(process.stdout)
   },
-  files: await glob(['**/*.test.{js,ts}'], { ignore: 'node_modules/**' })
+  files: await glob(['**/*.test.{js,ts}'], { ignore: 'node_modules/**' }),
 }).on('test:fail', (data) => {
   if (data.todo === undefined || data.todo === false) {
     process.exitCode = 1

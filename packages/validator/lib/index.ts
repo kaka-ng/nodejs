@@ -38,5 +38,5 @@ export {
   isJSON,
   isEmpty,
   isExist,
-  isEmail
+  isEmail,
 }

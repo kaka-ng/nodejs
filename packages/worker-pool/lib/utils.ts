@@ -12,7 +12,6 @@ require(workerData.__filename)
 `
 
 export function isTSNode (): boolean {
-  // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
   return !!(process as any)[Symbol.for('ts-node.register.instance')]
 }
 

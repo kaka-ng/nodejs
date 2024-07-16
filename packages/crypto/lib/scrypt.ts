@@ -22,7 +22,7 @@ export async function compare (value: string, hashed: string): Promise<boolean> 
   const maxmem = 128 * Math.pow(2, Number(cost)) * Number(blockSize) * 2
   return await new Promise(function (resolve) {
     scrypt(value, Buffer.from(salt, 'base64url'), Number(keylen), {
-      cost: Math.pow(2, Number(cost)), blockSize: Number(blockSize), parallelization: Number(parallelization), maxmem
+      cost: Math.pow(2, Number(cost)), blockSize: Number(blockSize), parallelization: Number(parallelization), maxmem,
     }, function (error, key) {
       const value = Buffer.from(hash, 'base64url')
       /* istanbul ignore next */

@@ -35,7 +35,6 @@ export class Worker {
   }
 
   constructor (handle: WorkerHandle, options?: WorkerOptions) {
-    // eslint-disable-next-line @typescript-eslint/non-nullable-type-assertion-style
     this.channel = parentPort as MessagePort
     this.#handle = handle
     this.#cleanup = options?.cleanup ?? (() => {})
@@ -107,7 +106,7 @@ export class Worker {
     this.channel.postMessage({
       messageId: randomUUID(),
       action,
-      value
+      value,
     }, transferList)
   }
 

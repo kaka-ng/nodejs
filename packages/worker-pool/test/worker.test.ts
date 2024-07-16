@@ -6,7 +6,7 @@ import { WorkerPool } from '../lib'
 test('events', async function (t) {
   const worker = new WorkerPool(join(__dirname, 'pingpong.worker.ts'), {
     minWorker: 1,
-    maxWorker: 1
+    maxWorker: 1,
   })
   const events = {
     online: 0,
@@ -14,7 +14,7 @@ test('events', async function (t) {
     busy: 0,
     terminate: 0,
     message: 0,
-    exit: 0
+    exit: 0,
   }
   function inc (event: keyof typeof events): () => void {
     return function () {
@@ -44,6 +44,6 @@ test('events', async function (t) {
     busy: 1,
     terminate: 0,
     message: 1,
-    exit: 1
+    exit: 1,
   })
 })

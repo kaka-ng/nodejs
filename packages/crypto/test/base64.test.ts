@@ -5,12 +5,12 @@ const CUSTOMCHARSET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234
 const decoded = {
   default: ['Zm9vYmFyYmF6', 'Zm9vYg=='],
   url: ['Zm9vYmFyYmF6', 'Zm9vYg'],
-  custom: ['zM9VyMfYyMf6', 'zM9VyG==']
+  custom: ['zM9VyMfYyMf6', 'zM9VyG=='],
 }
 const encoded = {
   string: ['foobarbaz', 'foob'],
   buffer: [] as Buffer[],
-  Uint8Array: [] as Uint8Array[]
+  Uint8Array: [] as Uint8Array[],
 }
 encoded.buffer = [Buffer.from(encoded.string[0]), Buffer.from(encoded.string[1])]
 encoded.Uint8Array = [new Uint8Array(encoded.buffer[0]), new Uint8Array(encoded.buffer[1])]

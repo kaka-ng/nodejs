@@ -4,6 +4,7 @@ import { isEqual, isIdentical, isObject } from '../../lib/primitive/object'
 test('Object', async function (t) {
   t.test('isObject', async function (t) {
     t.test('object', function (t) {
+      // eslint-disable-next-line no-object-constructor
       t.equal(isObject(Object()), true)
     })
 
