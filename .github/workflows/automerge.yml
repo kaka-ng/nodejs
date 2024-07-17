@@ -55,12 +55,13 @@ jobs:
     if: >
       github.event_name == 'pull_request' &&
       github.event.pull_request.user.login == 'dependabot[bot]'
+    needs: linter
     runs-on: ${{ matrix.os }}
     permissions:
       contents: read
     strategy:
       matrix:
-        node-version: [18, 20]
+        node-version: [20, 22]
         os: [ubuntu-latest]
     steps:
       - name: Check out repo
