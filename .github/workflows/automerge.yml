@@ -95,11 +95,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build @kakang/unit
-        run: pnpm --filter "./packages/unit" run build
+      - name: Build all packages
+        run: pnpm run build
 
       - name: Run tests
-        run: pnpm run test
+        run: pnpm run unit
 
   automerge:
     name: Automerge Dependabot PRs
