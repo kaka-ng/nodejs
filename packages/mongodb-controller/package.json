@@ -1,0 +1,60 @@
+{
+  "name": "@kakang/mongodb-controller",
+  "version": "3.0.2",
+  "description": "",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/mjs/index.js",
+      "require": "./lib/index.js"
+    }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "clean": "node ../../scripts/build.mjs --clean",
+    "lint": "eslint",
+    "lint:fix": "npm run lint -- --fix",
+    "build": "node ../../scripts/build.mjs --build=\"all\"",
+    "build:cjs": "node ../../scripts/build.mjs --build='cjs'",
+    "build:mjs": "node ../../scripts/build.mjs --build='mjs'",
+    "unit": "cross-env \"NODE_OPTIONS=--require ts-node/register\" unit",
+    "test": "npm run lint && npm run unit",
+    "coverage": "cross-env \"NODE_OPTIONS=--require ts-node/register\" c8 unit",
+    "prepublishOnly": "npm run build",
+    "postpublish": "npm run clean"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaka-ng/nodejs.git"
+  },
+  "author": "KaKa <kaka@kakang.dev>",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "@kakang/unit": "workspace:^",
+    "@types/node": "^20.14.10",
+    "c8": "^10.1.2",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.7.0",
+    "mongodb": "^6.3.0",
+    "neostandard": "^0.11.1",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.10",
+    "typescript": "~5.5.3"
+  },
+  "peerDependencies": {
+    "mongodb": "^6.3.0"
+  },
+  "dependencies": {
+    "@kakang/eventemitter": "workspace:^",
+    "@kakang/validator": "workspace:^"
+  }
+}
