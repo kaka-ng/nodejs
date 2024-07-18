@@ -75,20 +75,20 @@ export class AggregateBuilder {
     return this.#push('limit', stage)
   }
 
-  listLocalSessionsStage (stage: ListLocalSessionsStage): this {
-    return this.#push('listLocalSessionsStage', stage)
+  listLocalSessions (stage: ListLocalSessionsStage): this {
+    return this.#push('listLocalSessions', stage)
   }
 
-  listSampledQueriesStage (stage: ListSampledQueriesStage): this {
-    return this.#push('listSampledQueriesStage', stage)
+  listSampledQueries (stage: ListSampledQueriesStage): this {
+    return this.#push('listSampledQueries', stage)
   }
 
-  listSearchIndexesStage (stage: ListSearchIndexesStage): this {
-    return this.#push('listSearchIndexesStage', stage)
+  listSearchIndexes (stage: ListSearchIndexesStage): this {
+    return this.#push('listSearchIndexes', stage)
   }
 
-  listSessionsStage (stage: ListSessionsStage): this {
-    return this.#push('listSessionsStage', stage)
+  listSessions (stage: ListSessionsStage): this {
+    return this.#push('listSessions', stage)
   }
 
   lookup (stage: LookupStage): this {
