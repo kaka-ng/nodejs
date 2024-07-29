@@ -42,7 +42,7 @@
     "c8": "^10.1.2",
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
-    "eslint": "^9.7.0",
+    "eslint": "^9.8.0",
     "mongodb": "^6.3.0",
     "neostandard": "^0.11.1",
     "rimraf": "^6.0.1",
