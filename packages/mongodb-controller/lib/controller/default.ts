@@ -68,7 +68,7 @@ export class Controller<TSchema extends Document = Document> extends EventEmitte
     this.#collection = null as never as Collection<TSchema>
     this.collection = collection
     this.#indexes = []
-    this.#indexes.push([{ id: 1 }, { background: false, unique: true }])
+    this.#indexes.push([{ uid: 1 }, { background: false, unique: true }])
     this.#indexes.push(...(options?.indexes ?? []))
     this.#fields = []
     this.schema = options?.schema ?? { type: 'object', properties: {} }
