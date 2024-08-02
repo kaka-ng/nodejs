@@ -23,6 +23,7 @@ export interface SearchOptions {
 
 export interface ControllerOptions {
   schema?: unknown
+  indexField?: string
   searchFields?: string[]
   indexes?: Array<[IndexSpecification, CreateIndexesOptions | undefined]>
 }
@@ -32,6 +33,7 @@ export class Controller<TSchema extends Document = Document> extends EventEmitte
   readonly #indexes: Array<[IndexSpecification, CreateIndexesOptions | undefined]>
   #schema: unknown
   #fields: string[]
+  #indexField: string
   searchFields: string[]
   operatorMap: Map<string, string>
 
@@ -67,12 +69,13 @@ export class Controller<TSchema extends Document = Document> extends EventEmitte
     // pre-allocation
     this.#collection = null as never as Collection<TSchema>
     this.collection = collection
+    this.#indexField = options?.indexField ?? 'uid'
     this.#indexes = []
-    this.#indexes.push([{ uid: 1 }, { background: false, unique: true }])
+    this.#indexes.push([{ [this.#indexField]: 1 }, { background: false, unique: true }])
     this.#indexes.push(...(options?.indexes ?? []))
     this.#fields = []
     this.schema = options?.schema ?? { type: 'object', properties: {} }
-    this.searchFields = options?.searchFields ?? ['uid']
+    this.searchFields = options?.searchFields ?? [this.#indexField]
     // use build operator map to allows per controller
     this.operatorMap = buildOperatorMap()
 
@@ -126,7 +129,9 @@ export class Controller<TSchema extends Document = Document> extends EventEmitte
     // we must use upsert = true here
     options.upsert = true
     options.returnDocument = 'after'
-    const result = await this.collection.findOneAndReplace({ uid: doc.uid }, doc, options)
+    const result = await this.collection.findOneAndReplace({
+      [this.#indexField]: doc[this.#indexField],
+    } as Filter<TSchema>, doc, options)
     return result as TSchema | null
   }
 
@@ -161,8 +166,8 @@ export class Controller<TSchema extends Document = Document> extends EventEmitte
     // we pre-fetch the pending update documents and update
     // those records by uid to prevent non-consistency between
     // three operation without transaction.
-    const _uids: string[] = await this.collection.find(filter, { session }).map((o) => o.uid).toArray()
-    const _filter: Filter<TSchema> = { uid: { $in: _uids } } as any
+    const _uids: string[] = await this.collection.find(filter, { session }).map((o) => o[this.#indexField]).toArray()
+    const _filter: Filter<TSchema> = { [this.#indexField]: { $in: _uids } } as any
     await this.collection.updateMany(_filter, normalizeQueryData(doc), options)
     const result = await this.collection.find<TSchema>(_filter, { session }).toArray()
     return result
@@ -179,7 +184,7 @@ export class Controller<TSchema extends Document = Document> extends EventEmitte
     options ??= {}
     const session = options.session
     const result = await this.collection.find<TSchema>(filter, { session }).toArray()
-    const _filter: Filter<TSchema> = { uid: { $in: result.map((o) => o.uid) } } as any
+    const _filter: Filter<TSchema> = { [this.#indexField]: { $in: result.map((o) => o[this.#indexField]) } } as any
     await this.collection.deleteMany(_filter, options)
     return result
   }

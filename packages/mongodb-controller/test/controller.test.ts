@@ -18,6 +18,12 @@ test('controller', async (t) => {
     await client.close()
   })
 
+  t.test('provided getter', t => {
+    t.equal(controller.collectionName, 'controller')
+    t.deepEqual(controller.schema, { type: 'object', properties: {} })
+    t.deepEqual(controller.fields, [])
+  })
+
   t.test('insert', async t => {
     t.plan(7)
     const ok: typeof t.ok = t.ok
