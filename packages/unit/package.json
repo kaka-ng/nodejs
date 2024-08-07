@@ -1,6 +1,6 @@
 {
   "name": "@kakang/unit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "bin": "./bin/run.mjs",
   "main": "lib/index.js",
