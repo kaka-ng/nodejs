@@ -26,8 +26,8 @@ importers:
         specifier: ^9.9.0
         version: 9.9.0
       neostandard:
-        specifier: ^0.11.3
-        version: 0.11.3(eslint@9.9.0)(typescript@5.5.4)
+        specifier: ^0.11.4
+        version: 0.11.4(eslint@9.9.0)(typescript@5.5.4)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -59,8 +59,8 @@ importers:
         specifier: ^9.9.0
         version: 9.9.0
       neostandard:
-        specifier: ^0.11.3
-        version: 0.11.3(eslint@9.9.0)(typescript@5.5.4)
+        specifier: ^0.11.4
+        version: 0.11.4(eslint@9.9.0)(typescript@5.5.4)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -105,8 +105,8 @@ importers:
         specifier: ^6.3.0
         version: 6.8.0
       neostandard:
-        specifier: ^0.11.3
-        version: 0.11.3(eslint@9.9.0)(typescript@5.5.4)
+        specifier: ^0.11.4
+        version: 0.11.4(eslint@9.9.0)(typescript@5.5.4)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -142,8 +142,8 @@ importers:
         specifier: ^9.9.0
         version: 9.9.0
       neostandard:
-        specifier: ^0.11.3
-        version: 0.11.3(eslint@9.9.0)(typescript@5.5.4)
+        specifier: ^0.11.4
+        version: 0.11.4(eslint@9.9.0)(typescript@5.5.4)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -179,8 +179,8 @@ importers:
         specifier: ^9.9.0
         version: 9.9.0
       neostandard:
-        specifier: ^0.11.3
-        version: 0.11.3(eslint@9.9.0)(typescript@5.5.4)
+        specifier: ^0.11.4
+        version: 0.11.4(eslint@9.9.0)(typescript@5.5.4)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -212,8 +212,8 @@ importers:
         specifier: ^9.9.0
         version: 9.9.0
       neostandard:
-        specifier: ^0.11.3
-        version: 0.11.3(eslint@9.9.0)(typescript@5.5.4)
+        specifier: ^0.11.4
+        version: 0.11.4(eslint@9.9.0)(typescript@5.5.4)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -245,8 +245,8 @@ importers:
         specifier: ^9.9.0
         version: 9.9.0
       neostandard:
-        specifier: ^0.11.3
-        version: 0.11.3(eslint@9.9.0)(typescript@5.5.4)
+        specifier: ^0.11.4
+        version: 0.11.4(eslint@9.9.0)(typescript@5.5.4)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -1249,8 +1249,8 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
-  neostandard@0.11.3:
-    resolution: {integrity: sha512-ZDzt9wBIUnIr6ktvHDx81QgqmiIWHVmhrw/edv+AuhJlfkxrqxkzf+f8nksX1SSU8V5VDqGvfTj/F3UwyYF4+Q==}
+  neostandard@0.11.4:
+    resolution: {integrity: sha512-rBdlVeUdM0NhBc2S7Vr/l98Y/FTYY+YGdOqSgv60HzP3LF7ruX9Mceur4Nc/qkXf7UT1IOjofLS7OSLAObPi2A==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     hasBin: true
     peerDependencies:
@@ -2802,7 +2802,7 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  neostandard@0.11.3(eslint@9.9.0)(typescript@5.5.4):
+  neostandard@0.11.4(eslint@9.9.0)(typescript@5.5.4):
     dependencies:
       '@humanwhocodes/gitignore-to-minimatch': 1.0.2
       '@stylistic/eslint-plugin': 2.6.4(eslint@9.9.0)(typescript@5.5.4)
