@@ -1,3 +1,4 @@
 declare module 'fast-decode-uri-component' {
-  export default (path: string): string | undefined
+  function decode(path: string): string | undefined
+  export default decode
 }
