@@ -46,4 +46,5 @@ export async function send (request: IncomingMessage, requestPath: string, optio
 }
 
 export { isUtf8MimeType, mime } from './mime'
+export type { SendOptions } from './options'
 export type { DirectorySendResult, ErrorSendResult, FileSendResult, SendResult } from './types'
