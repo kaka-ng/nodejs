@@ -21,7 +21,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true
   },
-  "include": ["lib/**/*", "test/**/*", "fast-decode-uri-component.d.ts"],
+  "include": ["lib/**/*", "test/**/*"],
   "exclude": ["node_modules"],
   "ts-node": {
     "files": true
