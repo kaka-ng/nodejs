@@ -1314,7 +1314,7 @@ test('send(file, options)', async function (t: TestContext) {
         .get('/pets')
         .expect('Location', '/pets/')
         .expect('Content-Type', /html/)
-        .expect(301, />Redirecting to <a href="\/pets\/">\/pets\/<\/a></, err => {
+        .expect(301, />Redirecting to \/pets\/</, err => {
           resolve()
           return t.assert.ifError(err)
         })
@@ -1364,7 +1364,7 @@ test('send(file, options)', async function (t: TestContext) {
         .get('/snow')
         .expect('Location', '/snow%20%E2%98%83/')
         .expect('Content-Type', /html/)
-        .expect(301, />Redirecting to <a href="\/snow%20%E2%98%83\/">\/snow%20%E2%98%83\/<\/a></, err => {
+        .expect(301, />Redirecting to \/snow%20%E2%98%83\/</, err => {
           resolve()
           return t.assert.ifError(err)
         })
