@@ -32,6 +32,9 @@ importers:
       '@types/escape-html':
         specifier: ^1.0.4
         version: 1.0.4
+      '@types/fast-decode-uri-component':
+        specifier: ^1.0.0
+        version: 1.0.0
       '@types/http-errors':
         specifier: ^2.0.4
         version: 2.0.4
@@ -467,6 +470,9 @@ packages:
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
+
+  '@types/fast-decode-uri-component@1.0.0':
+    resolution: {integrity: sha512-xhTFpMookjiVEDxI8RBUOxZL8BQiI2+YZZoqzW/G6s3r1h60gDzGnmKP83LNuTmCqk8ZmbY5cYkByKu4t+rKhA==}
 
   '@types/http-errors@2.0.4':
     resolution: {integrity: sha512-D0CFMMtydbJAegzOyHjtiKPLlvnm3iTZyZRSZoLq2mRhDdmLfIWOCYPfQJ4cu2erKghU++QvjcUjp/5h7hESpA==}
@@ -2009,6 +2015,8 @@ snapshots:
       '@types/json-schema': 7.0.15
 
   '@types/estree@1.0.5': {}
+
+  '@types/fast-decode-uri-component@1.0.0': {}
 
   '@types/http-errors@2.0.4': {}
 
