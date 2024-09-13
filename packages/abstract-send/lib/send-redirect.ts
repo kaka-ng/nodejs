@@ -12,8 +12,7 @@ export function sendRedirect (path: string, options: NormalizedSendOptions): Sen
   }
 
   const loc = encodeURI(collapseLeadingSlashes(options.path + '/') as string)
-  const doc = createHtmlDocument('Redirecting', 'Redirecting to <a href="' + escapeHtml(loc) + '">' +
-    escapeHtml(loc) + '</a>')
+  const doc = createHtmlDocument('Redirecting', 'Redirecting to ' + escapeHtml(loc))
 
   const headers: Headers = {}
   headers['Content-Type'] = 'text/html; charset=UTF-8'
