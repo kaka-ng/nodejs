@@ -108,6 +108,44 @@ Serve files relative to `path`.
 Byte offset at which the stream starts, defaults to 0. The start is inclusive,
 meaning `start: 2` will include the 3rd byte in the stream.
 
+##### engine
+
+Provides engine for finding and serving the files.
+
+```js
+import { stat } from 'node:fs/promises'
+import { createReadStream } from 'node:fs'
+
+// it demonstrates using the built-in file engine
+const fsEngine = {
+  stat(path) {
+    return stat(path)
+  },
+  createReadStream(path, options) {
+    return createReadStream(path, options)
+  }
+}
+
+import { Readable } from 'node:stream'
+
+// it demonstrates custom one
+const customEngine = {
+  stat(path) {
+    // minimal interface to return
+    return {
+      size: 1,
+      mtime: new Date(),
+      isDirectory: () => false
+    }
+  },
+  createReadStream(path, options) {
+    // must return readable stream
+    // options provide start and end to retrieve partial data
+    return Readable.from(['hello', 'world']) 
+  }
+}
+```
+
 ### .mime
 
 The `mime` export is a proxy of global instance
