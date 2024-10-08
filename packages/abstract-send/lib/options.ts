@@ -8,7 +8,7 @@ import { StatsLike } from './types'
 
 export interface EngineOptions {
   stat: (path: string) => StatsLike | Promise<StatsLike>
-  createReadStream: (path: string, options: { start: number, end: number }) => Readable
+  createReadStream: (path: string, options: { start: number, end: number }) => Readable | Promise<Readable>
 }
 
 export interface SendOptions {

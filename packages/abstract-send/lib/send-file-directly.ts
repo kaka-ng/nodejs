@@ -122,7 +122,7 @@ export async function sendFileDirectly (request: IncomingMessage, path: string, 
     }
   }
 
-  const stream = options.engine.createReadStream(path, {
+  const stream = await options.engine.createReadStream(path, {
     start: offset,
     end: Math.max(offset, offset + len - 1)
   })
