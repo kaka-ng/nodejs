@@ -1,4 +1,4 @@
-import ms from '@lukeed/ms'
+import { parse } from '@lukeed/ms'
 import decode from 'fast-decode-uri-component'
 import { createReadStream } from 'node:fs'
 import { stat } from 'node:fs/promises'
@@ -85,7 +85,7 @@ function _array (option?: boolean | string | string[], name: string = 'option', 
 function _number (option?: string | number, min: number = 0, max: number = Number.POSITIVE_INFINITY): number {
   let num: number
   if (typeof option === 'string') {
-    num = ms.parse(option) as number
+    num = parse(option) as number
   } else {
     num = Number(option)
   }
