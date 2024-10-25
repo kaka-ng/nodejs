@@ -1,7 +1,7 @@
 import { EventEmitter, Listener } from '@kakang/eventemitter'
 import { isArray, isEmpty, isExist, isNumber, isObject, isString } from '@kakang/validator'
 import { type AggregateOptions, type Collection, type CreateIndexesOptions, type DeleteOptions, type Document, type Filter, type FindOneAndDeleteOptions, type FindOneAndReplaceOptions, type FindOneAndUpdateOptions, type FindOptions, type IndexSpecification, type UpdateFilter, type UpdateOptions } from 'mongodb'
-import { AggregateBuilder, type MatchStage, type ProjectStage, type SortStage } from '../utils/aggregate-builder'
+import { AggregateBuilder, Pipeline, type MatchStage, type ProjectStage, type SortStage } from '../utils/aggregate-builder'
 import { appendCreateFields, appendUpdateFields } from '../utils/append'
 import { noop } from '../utils/noop'
 import { buildOperatorMap } from '../utils/operator-map'
@@ -16,6 +16,8 @@ export interface SearchOptions {
   [key: `orderby.${string}`]: 'asc' | 'desc' | 'text'
   // project
   fields?: string | string[]
+  // embed
+  embed?: string | string[]
   // pagination
   page?: number
   pageSize?: number
@@ -191,6 +193,7 @@ export class Controller<TSchema extends Document = Document> extends EventEmitte
 
   pipelineQuery (options?: SearchOptions): AggregateBuilder {
     const builder = new AggregateBuilder()
+    const contains: string[] = []
     // search and where should be concat with $and
     // if anyone just like to filter, it should not
     // pass search
@@ -201,6 +204,7 @@ export class Controller<TSchema extends Document = Document> extends EventEmitte
         // we update search first
         const search = []
         for (const field of this.searchFields) {
+          contains.push(field)
           search.push({ [field]: { $regexp: options.search, $options: 'i' } })
         }
         $and.push({ $or: search })
@@ -225,6 +229,7 @@ export class Controller<TSchema extends Document = Document> extends EventEmitte
             const { field: _field, operator } = splitFieldOperator(field, this.operatorMap)
             if (!isExist(operator) || !isExist(_field)) continue
 
+            contains.push(_field)
             $or.push({ [_field]: { [operator]: value } })
           }
           if ($or.length) {
@@ -236,6 +241,8 @@ export class Controller<TSchema extends Document = Document> extends EventEmitte
         // where.[field].[operator]
         const { field: name, operator } = splitFieldOperator(field, this.operatorMap)
         if (!isExist(operator) || !isExist(name)) continue
+
+        contains.push(name)
         obj[name] ??= {}
         obj[name][operator] = value
       }
@@ -248,7 +255,15 @@ export class Controller<TSchema extends Document = Document> extends EventEmitte
     if ($and.length) {
       builder.match(option)
     }
+
+    // we provides the contained fields for embed
+    builder.metadata = contains
     return builder
+  }
+
+  // embed, must override to uses
+  pipelineEmbeds (_embed?: string | string[]): Record<string, AggregateBuilder> {
+    return {}
   }
 
   // project
@@ -290,6 +305,7 @@ export class Controller<TSchema extends Document = Document> extends EventEmitte
   // sort
   pipelineOrderBy (options?: Record<`orderby.${string}`, 'asc' | 'desc' | 'text'>): AggregateBuilder {
     const builder = new AggregateBuilder()
+    const contains: string[] = []
     if (isObject(options)) {
       const option: SortStage = {}
       for (const _field in options) {
@@ -318,6 +334,7 @@ export class Controller<TSchema extends Document = Document> extends EventEmitte
         }
         // no order, then skip
         if (!isExist(order)) continue
+        contains.push(field)
         option[field] = order
       }
 
@@ -325,18 +342,38 @@ export class Controller<TSchema extends Document = Document> extends EventEmitte
         builder.sort(option)
       }
     }
+    builder.metadata = contains
     return builder
   }
 
   pipeline (options: SearchOptions = {}): AggregateBuilder {
     const builder = this.buildAggregateBuilder(options)
     // matching in the first
-    builder.concat(this.pipelineQuery(options))
+    const query = this.pipelineQuery(options)
+    builder.concat(query)
     // we should sort before pagination
-    builder.concat(this.pipelineOrderBy(options))
-    builder.concat(this.pipelinePagination(options.page, options.pageSize))
+    const orderBy = this.pipelineOrderBy(options)
+    builder.concat(orderBy)
+    const pagination = this.pipelinePagination(options.page, options.pageSize)
+    builder.concat(pagination)
+    // compute embed before fields to determine if we prepend or append to builder
+    const embeds = this.pipelineEmbeds(options.embed)
+    const embedKeys = Object.keys(embeds)
+    const contains = (query.metadata as string[]).concat(orderBy.metadata as string[])
+    let prepend: Pipeline[] = []
+    let append: Pipeline[] = []
+    for (const key of embedKeys) {
+      if (contains.some((contain) => contain.startsWith(key))) {
+        prepend = prepend.concat(embeds[key].toArray())
+      } else {
+        append = append.concat(embeds[key].toArray())
+      }
+    }
+    builder.prepend(prepend)
+    builder.concat(append)
     // project must be the last stage
-    builder.concat(this.pipelineFields(options.fields))
+    const fields = this.pipelineFields(options.fields)
+    builder.concat(fields)
     return builder
   }
 

@@ -2,9 +2,12 @@ export type Pipeline = Record<string, Stages>
 
 export class AggregateBuilder {
   #pipeline: Pipeline[]
+  // provide immediate data for concat
+  metadata: unknown
 
   constructor () {
     this.#pipeline = []
+    this.metadata = null
   }
 
   addFields (stage: AddFieldsStage): this {
@@ -179,6 +182,14 @@ export class AggregateBuilder {
     this.#pipeline.push({
       [`$${operator}`]: stage,
     })
+    return this
+  }
+
+  prepend (pipeline: AggregateBuilder | Pipeline[]): this {
+    if (pipeline instanceof AggregateBuilder) {
+      pipeline = pipeline.toArray()
+    }
+    this.#pipeline = pipeline.concat(this.#pipeline)
     return this
   }
 

@@ -1,6 +1,7 @@
 import { test } from '@kakang/unit'
+import { isArray, isString } from '@kakang/validator'
 import { MongoClient } from 'mongodb'
-import { Controller } from '../lib'
+import { AggregateBuilder, Controller } from '../lib'
 import { noop } from '../lib/utils/noop'
 import { MONGODB_URL } from './config'
 
@@ -11,6 +12,20 @@ test('pipeline', async (t) => {
   const controller = new Controller(collection, {
     searchFields: ['uid', 'foo', 'bar'],
   })
+  controller.pipelineEmbeds = (embed) => {
+    const embeds: Record<string, AggregateBuilder> = {}
+    let keys: string[] = []
+    if (isString(embed)) {
+      keys = embed.split(',')
+    }
+    if (isArray(embed)) {
+      keys = embed
+    }
+    for (const key of keys) {
+      embeds[key] = new AggregateBuilder().lookup({ from: key, localField: 'local', foreignField: 'foreign', as: key })
+    }
+    return embeds
+  }
 
   t.after(async () => {
     // we doesn't care if the database is properly removed or not
@@ -244,5 +259,38 @@ test('pipeline', async (t) => {
         ],
       })
     })
+  })
+
+  t.test('embed', t => {
+    t.test('prepend', t => {
+      t.plan(2)
+      const pipeline = controller.pipeline({
+        embed: 'foo',
+        search: 'a'
+      }).toArray()
+      t.equal(pipeline.length, 2)
+      t.deepEqual(pipeline[0].$lookup, { from: 'foo', localField: 'local', foreignField: 'foreign', as: 'foo' })
+    })
+  })
+
+  t.test('append', t => {
+    t.plan(2)
+    const pipeline = controller.pipeline({
+      embed: 'embed',
+      search: 'a'
+    }).toArray()
+    t.equal(pipeline.length, 2)
+    t.deepEqual(pipeline[1].$lookup, { from: 'embed', localField: 'local', foreignField: 'foreign', as: 'embed' })
+  })
+
+  t.test('both', t => {
+    t.plan(3)
+    const pipeline = controller.pipeline({
+      embed: 'foo,embed',
+      search: 'a'
+    }).toArray()
+    t.equal(pipeline.length, 3)
+    t.deepEqual(pipeline[0].$lookup, { from: 'foo', localField: 'local', foreignField: 'foreign', as: 'foo' })
+    t.deepEqual(pipeline[2].$lookup, { from: 'embed', localField: 'local', foreignField: 'foreign', as: 'embed' })
   })
 })
