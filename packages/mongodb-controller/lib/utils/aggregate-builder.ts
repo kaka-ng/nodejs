@@ -363,7 +363,7 @@ export interface LookupStage {
   from: string
   localField?: string
   foreignField?: string
-  let?: string
+  let?: Record<string, string>
   pipeline?: unknown[]
   as: string
 }
