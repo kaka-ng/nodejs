@@ -58,6 +58,6 @@
     "escape-html": "^1.0.3",
     "fast-decode-uri-component": "^1.0.1",
     "http-errors": "^2.0.0",
-    "mime": "^4.0.4"
+    "mime": "^4.0.6"
   }
 }
