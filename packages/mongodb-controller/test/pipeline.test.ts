@@ -202,9 +202,9 @@ test('pipeline', async (t) => {
         $and: [
           {
             $or: [
-              { uid: { $regexp: 'hello', $options: 'i' } },
-              { foo: { $regexp: 'hello', $options: 'i' } },
-              { bar: { $regexp: 'hello', $options: 'i' } },
+              { uid: { $regex: 'hello', $options: 'i' } },
+              { foo: { $regex: 'hello', $options: 'i' } },
+              { bar: { $regex: 'hello', $options: 'i' } },
             ],
           },
         ],
