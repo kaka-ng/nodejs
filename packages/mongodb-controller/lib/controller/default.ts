@@ -205,7 +205,7 @@ export class Controller<TSchema extends Document = Document> extends EventEmitte
         const search = []
         for (const field of this.searchFields) {
           contains.push(field)
-          search.push({ [field]: { $regexp: options.search, $options: 'i' } })
+          search.push({ [field]: { $regex: options.search, $options: 'i' } })
         }
         $and.push({ $or: search })
       }
