@@ -50,6 +50,6 @@
     "typescript": "~5.7.2"
   },
   "dependencies": {
-    "glob": "^11.0.0"
+    "glob": "^11.0.1"
   }
 }
