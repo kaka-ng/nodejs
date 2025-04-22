@@ -39,8 +39,8 @@ importers:
         specifier: ^2.0.4
         version: 2.0.4
       '@types/node':
-        specifier: ^22.13.8
-        version: 22.13.8
+        specifier: ^22.14.1
+        version: 22.14.1
       '@types/supertest':
         specifier: ^6.0.2
         version: 6.0.2
@@ -64,7 +64,7 @@ importers:
         version: 6.3.4
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@22.13.8)(typescript@5.8.3)
+        version: 10.9.2(@types/node@22.14.1)(typescript@5.8.3)
       tsc-alias:
         specifier: ^1.8.15
         version: 1.8.15
@@ -78,8 +78,8 @@ importers:
         specifier: workspace:^
         version: link:../unit
       '@types/node':
-        specifier: ^22.13.8
-        version: 22.13.8
+        specifier: ^22.14.1
+        version: 22.14.1
       c8:
         specifier: ^10.1.3
         version: 10.1.3
@@ -97,7 +97,7 @@ importers:
         version: 6.0.1
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@22.13.8)(typescript@5.8.3)
+        version: 10.9.2(@types/node@22.14.1)(typescript@5.8.3)
       tsc-alias:
         specifier: ^1.8.15
         version: 1.8.15
@@ -111,8 +111,8 @@ importers:
         specifier: workspace:^
         version: link:../unit
       '@types/node':
-        specifier: ^22.13.8
-        version: 22.13.8
+        specifier: ^22.14.1
+        version: 22.14.1
       c8:
         specifier: ^10.1.3
         version: 10.1.3
@@ -130,7 +130,7 @@ importers:
         version: 6.0.1
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@22.13.8)(typescript@5.8.3)
+        version: 10.9.2(@types/node@22.14.1)(typescript@5.8.3)
       tsc-alias:
         specifier: ^1.8.15
         version: 1.8.15
@@ -151,8 +151,8 @@ importers:
         specifier: workspace:^
         version: link:../unit
       '@types/node':
-        specifier: ^22.13.8
-        version: 22.13.8
+        specifier: ^22.14.1
+        version: 22.14.1
       c8:
         specifier: ^10.1.3
         version: 10.1.3
@@ -176,7 +176,7 @@ importers:
         version: 6.0.1
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@22.13.8)(typescript@5.8.3)
+        version: 10.9.2(@types/node@22.14.1)(typescript@5.8.3)
       tsc-alias:
         specifier: ^1.8.15
         version: 1.8.15
@@ -194,8 +194,8 @@ importers:
         specifier: workspace:^
         version: 'link:'
       '@types/node':
-        specifier: ^22.13.8
-        version: 22.13.8
+        specifier: ^22.14.1
+        version: 22.14.1
       c8:
         specifier: ^10.1.3
         version: 10.1.3
@@ -213,7 +213,7 @@ importers:
         version: 6.0.1
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@22.13.8)(typescript@5.8.3)
+        version: 10.9.2(@types/node@22.14.1)(typescript@5.8.3)
       tsc-alias:
         specifier: ^1.8.15
         version: 1.8.15
@@ -231,8 +231,8 @@ importers:
         specifier: workspace:^
         version: link:../unit
       '@types/node':
-        specifier: ^22.13.8
-        version: 22.13.8
+        specifier: ^22.14.1
+        version: 22.14.1
       c8:
         specifier: ^10.1.3
         version: 10.1.3
@@ -250,7 +250,7 @@ importers:
         version: 6.0.1
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@22.13.8)(typescript@5.8.3)
+        version: 10.9.2(@types/node@22.14.1)(typescript@5.8.3)
       tsc-alias:
         specifier: ^1.8.15
         version: 1.8.15
@@ -264,8 +264,8 @@ importers:
         specifier: workspace:^
         version: link:../unit
       '@types/node':
-        specifier: ^22.13.8
-        version: 22.13.8
+        specifier: ^22.14.1
+        version: 22.14.1
       c8:
         specifier: ^10.1.3
         version: 10.1.3
@@ -283,7 +283,7 @@ importers:
         version: 6.0.1
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@22.13.8)(typescript@5.8.3)
+        version: 10.9.2(@types/node@22.14.1)(typescript@5.8.3)
       tsc-alias:
         specifier: ^1.8.15
         version: 1.8.15
@@ -297,8 +297,8 @@ importers:
         specifier: workspace:^
         version: link:../unit
       '@types/node':
-        specifier: ^22.13.8
-        version: 22.13.8
+        specifier: ^22.14.1
+        version: 22.14.1
       c8:
         specifier: ^10.1.3
         version: 10.1.3
@@ -316,7 +316,7 @@ importers:
         version: 6.0.1
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@22.13.8)(typescript@5.8.3)
+        version: 10.9.2(@types/node@22.14.1)(typescript@5.8.3)
       tsc-alias:
         specifier: ^1.8.15
         version: 1.8.15
@@ -488,8 +488,8 @@ packages:
   '@types/methods@1.1.4':
     resolution: {integrity: sha512-ymXWVrDiCxTBE3+RIrrP533E70eA+9qu7zdWoHuOmGujkYtzf4HQF96b8nwHLqhuf4ykX61IGRIB38CC6/sImQ==}
 
-  '@types/node@22.13.8':
-    resolution: {integrity: sha512-G3EfaZS+iOGYWLLRCEAXdWK9my08oHNZ+FHluRiggIYJPOXzhOiDgpVCUHaUvyIC5/fj7C/p637jdzC666AOKQ==}
+  '@types/node@22.14.1':
+    resolution: {integrity: sha512-u0HuPQwe/dHrItgHHpmw3N2fYCR6x4ivMNbPHRkBVP4CvN+kiRrKHWk3i8tXiO/joPwXLMYvF9TTF0eqgHIuOw==}
 
   '@types/superagent@8.1.9':
     resolution: {integrity: sha512-pTVjI73witn+9ILmoJdajHGW2jkSaOzhiFYF1Rd3EQ94kymLqB9PjD9ISg7WaALC7+dCHT0FGe9T2LktLq/3GQ==}
@@ -1860,8 +1860,8 @@ packages:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
     engines: {node: '>= 0.4'}
 
-  undici-types@6.20.0:
-    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
+  undici-types@6.21.0:
+    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
 
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
@@ -2090,15 +2090,15 @@ snapshots:
 
   '@types/methods@1.1.4': {}
 
-  '@types/node@22.13.8':
+  '@types/node@22.14.1':
     dependencies:
-      undici-types: 6.20.0
+      undici-types: 6.21.0
 
   '@types/superagent@8.1.9':
     dependencies:
       '@types/cookiejar': 2.1.5
       '@types/methods': 1.1.4
-      '@types/node': 22.13.8
+      '@types/node': 22.14.1
       form-data: 4.0.0
 
   '@types/supertest@6.0.2':
@@ -3644,14 +3644,14 @@ snapshots:
     dependencies:
       typescript: 5.8.3
 
-  ts-node@10.9.2(@types/node@22.13.8)(typescript@5.8.3):
+  ts-node@10.9.2(@types/node@22.14.1)(typescript@5.8.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 22.13.8
+      '@types/node': 22.14.1
       acorn: 8.12.0
       acorn-walk: 8.3.3
       arg: 4.1.3
@@ -3730,7 +3730,7 @@ snapshots:
       has-symbols: 1.1.0
       which-boxed-primitive: 1.1.1
 
-  undici-types@6.20.0: {}
+  undici-types@6.21.0: {}
 
   uri-js@4.4.1:
     dependencies:
