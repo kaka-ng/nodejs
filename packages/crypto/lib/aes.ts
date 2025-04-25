@@ -1,7 +1,7 @@
-import { createCipheriv, createDecipheriv, scryptSync, type BinaryLike, type CipherCCMTypes, type CipherGCM, type CipherGCMTypes, type DecipherGCM } from 'crypto'
+import { CipherChaCha20Poly1305Types, createCipheriv, createDecipheriv, scryptSync, type BinaryLike, type CipherCCMTypes, type CipherGCM, type CipherGCMTypes, type DecipherGCM } from 'crypto'
 import { randomBytes } from './utils'
 
-export function computeKeySize (algorithm: CipherCCMTypes | CipherGCMTypes = 'aes-256-gcm'): number {
+export function computeKeySize (algorithm: CipherCCMTypes | CipherGCMTypes | CipherChaCha20Poly1305Types = 'aes-256-gcm'): number {
   switch (algorithm) {
     case 'aes-128-ccm':
     case 'aes-128-gcm':
@@ -17,7 +17,7 @@ export function computeKeySize (algorithm: CipherCCMTypes | CipherGCMTypes = 'ae
   }
 }
 
-export function computeIVSize (algorithm: CipherCCMTypes | CipherGCMTypes = 'aes-256-gcm'): number {
+export function computeIVSize (algorithm: CipherCCMTypes | CipherGCMTypes | CipherChaCha20Poly1305Types = 'aes-256-gcm'): number {
   switch (algorithm) {
     case 'chacha20-poly1305':
       return 12
@@ -42,7 +42,7 @@ export interface EncryptionResult {
 
 export function encrypt (
   token: string,
-  algorithm: CipherCCMTypes | CipherGCMTypes = 'aes-256-gcm',
+  algorithm: CipherCCMTypes | CipherGCMTypes | CipherChaCha20Poly1305Types = 'aes-256-gcm',
   secret: BinaryLike = randomBytes(32, 'hex'),
   salt: BinaryLike = randomBytes(32, 'hex'),
   authTagLength = 16
@@ -69,7 +69,7 @@ export function decrypt (
   encrypted: string,
   iv: Buffer,
   authTag: Buffer,
-  algorithm: CipherCCMTypes | CipherGCMTypes,
+  algorithm: CipherCCMTypes | CipherGCMTypes | CipherChaCha20Poly1305Types,
   secret: BinaryLike,
   salt: BinaryLike,
   authTagLength = 16
