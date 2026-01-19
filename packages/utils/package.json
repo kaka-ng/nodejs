@@ -49,6 +49,6 @@
     "typescript": "~5.9.3"
   },
   "dependencies": {
-    "pinyin-pro": "^3.27.0"
+    "pinyin-pro": "^3.28.0"
   }
 }
