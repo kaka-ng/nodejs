@@ -66,8 +66,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.10.2)(typescript@5.9.3)
       tsc-alias:
-        specifier: ^1.8.17
-        version: 1.8.17
+        specifier: ^1.9.0
+        version: 1.9.0
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -99,8 +99,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.10.2)(typescript@5.9.3)
       tsc-alias:
-        specifier: ^1.8.17
-        version: 1.8.17
+        specifier: ^1.9.0
+        version: 1.9.0
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -132,8 +132,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.10.2)(typescript@5.9.3)
       tsc-alias:
-        specifier: ^1.8.17
-        version: 1.8.17
+        specifier: ^1.9.0
+        version: 1.9.0
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -178,8 +178,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.10.2)(typescript@5.9.3)
       tsc-alias:
-        specifier: ^1.8.17
-        version: 1.8.17
+        specifier: ^1.9.0
+        version: 1.9.0
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -215,8 +215,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.10.2)(typescript@5.9.3)
       tsc-alias:
-        specifier: ^1.8.17
-        version: 1.8.17
+        specifier: ^1.9.0
+        version: 1.9.0
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -252,8 +252,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.10.2)(typescript@5.9.3)
       tsc-alias:
-        specifier: ^1.8.17
-        version: 1.8.17
+        specifier: ^1.9.0
+        version: 1.9.0
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -285,8 +285,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.10.2)(typescript@5.9.3)
       tsc-alias:
-        specifier: ^1.8.17
-        version: 1.8.17
+        specifier: ^1.9.0
+        version: 1.9.0
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -318,8 +318,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.10.2)(typescript@5.9.3)
       tsc-alias:
-        specifier: ^1.8.17
-        version: 1.8.17
+        specifier: ^1.9.0
+        version: 1.9.0
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -1274,6 +1274,10 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
+  hasown@2.0.4:
+    resolution: {integrity: sha512-T2UbfbBEF32wiepXIsMlTW9+dDYC6wMh/t/vYA4tuOMKqWz/n3vr1NFSxQiyP+zk2mXsoMA/i/7qV6LKut1t1A==}
+    engines: {node: '>= 0.4'}
+
   hexoid@1.0.0:
     resolution: {integrity: sha512-QFLV0taWQOZtvIRIAdBChesmogZrtuXvVWsFHZTk2SU+anspqZ2vMnoLg7IE1+Uk16N19APic1BuF8bC8c2m5g==}
     engines: {node: '>=8'}
@@ -1337,6 +1341,10 @@ packages:
 
   is-core-module@2.16.1:
     resolution: {integrity: sha512-UfoeMA6fIJ8wTYFEUjelnaGI67v6+N7qXJEvQuIGa99l4xsCruSYOVSQ0uPANn4dAzm8lkYPaKLrrijLq7x23w==}
+    engines: {node: '>= 0.4'}
+
+  is-core-module@2.16.2:
+    resolution: {integrity: sha512-evOr8xfXKxE6qSR0hSXL2r3sd7ALj8+7jQEUvPYcm5sgZFdJ+AYzT6yNmJenvIYQBgIGwfwz08sL8zoL7yq2BA==}
     engines: {node: '>= 0.4'}
 
   is-data-view@1.0.2:
@@ -1989,8 +1997,8 @@ packages:
       '@swc/wasm':
         optional: true
 
-  tsc-alias@1.8.17:
-    resolution: {integrity: sha512-EIduCZHqbNwPm8BZYfq1aD7BQ697A4h6uSGMOFQfYGoQwfrYFTKwYfy9Bv42YxHkduVBcn9Zx0DkX111DKskyg==}
+  tsc-alias@1.9.0:
+    resolution: {integrity: sha512-IZrCInovKxVCwXyKhcdr/HaxSYugKT0w4zyktOE/4115Nzo6gbp/NhkaEeyOG0/H7QoTeXtv+3UHffBYta9oWw==}
     engines: {node: '>=16.20.2'}
     hasBin: true
 
@@ -2881,7 +2889,7 @@ snapshots:
   eslint-import-resolver-node@0.3.9:
     dependencies:
       debug: 3.2.7
-      is-core-module: 2.16.1
+      is-core-module: 2.16.2
       resolve: 1.22.12
     transitivePeerDependencies:
       - supports-color
@@ -3215,6 +3223,11 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
+  hasown@2.0.4:
+    dependencies:
+      function-bind: 1.1.2
+    optional: true
+
   hexoid@1.0.0: {}
 
   html-escaper@2.0.2: {}
@@ -3282,6 +3295,11 @@ snapshots:
   is-core-module@2.16.1:
     dependencies:
       hasown: 2.0.2
+
+  is-core-module@2.16.2:
+    dependencies:
+      hasown: 2.0.4
+    optional: true
 
   is-data-view@1.0.2:
     dependencies:
@@ -3688,7 +3706,7 @@ snapshots:
   resolve@1.22.12:
     dependencies:
       es-errors: 1.3.0
-      is-core-module: 2.16.1
+      is-core-module: 2.16.2
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
     optional: true
@@ -3955,7 +3973,7 @@ snapshots:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
-  tsc-alias@1.8.17:
+  tsc-alias@1.9.0:
     dependencies:
       chokidar: 3.6.0
       commander: 9.5.0
