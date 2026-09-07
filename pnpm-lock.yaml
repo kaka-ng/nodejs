@@ -66,8 +66,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.10.2)(typescript@5.9.3)
       tsc-alias:
-        specifier: ^1.9.3
-        version: 1.9.3
+        specifier: ^1.9.4
+        version: 1.9.4
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -99,8 +99,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.10.2)(typescript@5.9.3)
       tsc-alias:
-        specifier: ^1.9.3
-        version: 1.9.3
+        specifier: ^1.9.4
+        version: 1.9.4
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -132,8 +132,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.10.2)(typescript@5.9.3)
       tsc-alias:
-        specifier: ^1.9.3
-        version: 1.9.3
+        specifier: ^1.9.4
+        version: 1.9.4
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -178,8 +178,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.10.2)(typescript@5.9.3)
       tsc-alias:
-        specifier: ^1.9.3
-        version: 1.9.3
+        specifier: ^1.9.4
+        version: 1.9.4
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -215,8 +215,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.10.2)(typescript@5.9.3)
       tsc-alias:
-        specifier: ^1.9.3
-        version: 1.9.3
+        specifier: ^1.9.4
+        version: 1.9.4
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -252,8 +252,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.10.2)(typescript@5.9.3)
       tsc-alias:
-        specifier: ^1.9.3
-        version: 1.9.3
+        specifier: ^1.9.4
+        version: 1.9.4
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -285,8 +285,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.10.2)(typescript@5.9.3)
       tsc-alias:
-        specifier: ^1.9.3
-        version: 1.9.3
+        specifier: ^1.9.4
+        version: 1.9.4
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -318,8 +318,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.10.2)(typescript@5.9.3)
       tsc-alias:
-        specifier: ^1.9.3
-        version: 1.9.3
+        specifier: ^1.9.4
+        version: 1.9.4
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -2001,8 +2001,8 @@ packages:
       '@swc/wasm':
         optional: true
 
-  tsc-alias@1.9.3:
-    resolution: {integrity: sha512-GKrkA/K5hwae80rlfJRazukMMMIUsIHRyb75lbEp+qaUP57sYmur2Z05dosZNBspByX3ZrxbLHkMRgLfVuUcYg==}
+  tsc-alias@1.9.4:
+    resolution: {integrity: sha512-vfhh/N9xQ6oRgdAvuXVbhHSsNtbk+D4LFbJ9YrFPTTP9evGAvf2Xc3MQ7lTVmnJNN+FnuoKHn3524CKDzFYOag==}
     engines: {node: '>=16.20.2'}
     hasBin: true
 
@@ -3985,7 +3985,7 @@ snapshots:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
-  tsc-alias@1.9.3:
+  tsc-alias@1.9.4:
     dependencies:
       chokidar: 3.6.0
       commander: 9.5.0
